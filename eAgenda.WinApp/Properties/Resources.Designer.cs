@@ -113,6 +113,16 @@ namespace eAgenda.WinApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CabecalhoCadastro {
+            get {
+                object obj = ResourceManager.GetObject("CabecalhoCadastro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Contatos {
             get {
                 object obj = ResourceManager.GetObject("Contatos", resourceCulture);
@@ -233,6 +243,16 @@ namespace eAgenda.WinApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MenuParaBaixoCinza2 {
+            get {
+                object obj = ResourceManager.GetObject("MenuParaBaixoCinza2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Minimizar {
             get {
                 object obj = ResourceManager.GetObject("Minimizar", resourceCulture);
@@ -286,6 +306,16 @@ namespace eAgenda.WinApp.Properties {
         internal static System.Drawing.Bitmap MinimizarRemaster {
             get {
                 object obj = ResourceManager.GetObject("MinimizarRemaster", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OkApertado {
+            get {
+                object obj = ResourceManager.GetObject("OkApertado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,6 +396,26 @@ namespace eAgenda.WinApp.Properties {
         internal static System.Drawing.Bitmap SairRemaster {
             get {
                 object obj = ResourceManager.GetObject("SairRemaster", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TelaErro {
+            get {
+                object obj = ResourceManager.GetObject("TelaErro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TelaSucesso {
+            get {
+                object obj = ResourceManager.GetObject("TelaSucesso", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

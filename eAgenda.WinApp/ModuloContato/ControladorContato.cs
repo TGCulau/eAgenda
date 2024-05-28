@@ -9,8 +9,16 @@ namespace eAgenda.WinApp.ModuloContato
 {
     internal class ControladorContato : ControladorBase
     {
-        public override string TipoCadastro { get { return "Contatos"; } }
+        private RepositorioContato repositorioContato;
 
+        private ListagemContatoControl listagemContato;
+
+        public ControladorContato(RepositorioContato repositorio)
+        {
+            repositorioContato = repositorio;
+        }
+               
+        public override string TipoCadastro { get { return "Contatos"; } }
 
         public override string ToolTipAdicionar { get { return "Cadastrar um novo contato"; } }
 
@@ -21,12 +29,36 @@ namespace eAgenda.WinApp.ModuloContato
         public override void Adicionar()
         {
             TelaContatoForm telaContato = new TelaContatoForm();
-            telaContato.ShowDialog();
+
+            DialogResult resultado = telaContato.ShowDialog();
+
+            if(resultado == DialogResult.OK)
+            {             
+                Contato novoContato = telaContato.Contato;
+
+                repositorioContato.Cadastrar(novoContato);
+                            
+                CarregarContatos();
+            }
+        }
+
+        private void CarregarContatos()
+        {
+            List<Contato> contatos = repositorioContato.SelecionarTodos();
+
+            listagemContato.AtualizarRegistros(contatos);
         }
 
         public override UserControl ObterListagem()
         {
-            return new ListagemContatoControl();
+            if(listagemContato == null)
+            {
+                listagemContato = new ListagemContatoControl();
+            }
+
+            CarregarContatos();
+
+            return listagemContato;
         }
     }
 }

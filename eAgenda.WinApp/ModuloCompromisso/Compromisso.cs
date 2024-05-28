@@ -9,12 +9,14 @@ namespace eAgenda.WinApp.ModuloCompromisso
 {
     public class Compromisso : EntidadeBase
     {
+       // public string ID { get; set; }
         public string Assunto { get; set; }
         public string Data { get; set; }
         public string Inicio { get; set; }
         public string Termino { get; set; }
         public string Contato { get; set; }
         public string Localizacao { get; set; }
+        
 
         public Compromisso(string assunto, string data, string inicio, string termino, string contato, string localizacao)
         {

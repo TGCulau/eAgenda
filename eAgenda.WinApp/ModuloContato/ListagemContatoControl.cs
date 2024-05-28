@@ -15,14 +15,14 @@ namespace eAgenda.WinApp.ModuloContato
         public ListagemContatoControl()
         {
             InitializeComponent();
-
-            listaContatos.Items.Add(new Contato("Culau", "49 99147-3740", "tgculau@gmail.com", "Academia do Arogramador", "Aluno"));
-
         }
 
-        private void listContatos_SelectedIndexChanged(object sender, EventArgs e)
+        public void AtualizarRegistros(List<Contato> contatos)
         {
+            listaContatos.Items.Clear();
 
+            foreach (Contato contato in contatos)
+                listaContatos.Items.Add(contato);
         }
     }
 }

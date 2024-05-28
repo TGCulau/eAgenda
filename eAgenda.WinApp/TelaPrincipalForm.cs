@@ -1,6 +1,7 @@
 using eAgenda.WinApp.Compartilhado;
 using eAgenda.WinApp.ModuloCompromisso;
 using eAgenda.WinApp.ModuloContato;
+using System.Drawing.Drawing2D;
 
 namespace eAgenda.WinApp
 {
@@ -8,9 +9,10 @@ namespace eAgenda.WinApp
     {
         #region Inicializações
         ControladorBase controlador;
+        RepositorioContato repositorioContato;
         private bool estaDescendo = false;
         private Point mouseDownLocation;
-        private System.Windows.Forms.Timer TimerFormulario = new System.Windows.Forms.Timer();
+        private System.Windows.Forms.Timer TimerFormularioMinimiza = new System.Windows.Forms.Timer();
         private System.Windows.Forms.Timer TimerFormularioFechamento = new System.Windows.Forms.Timer();
         private System.Windows.Forms.Timer TimerCadastro = new System.Windows.Forms.Timer();
         #endregion
@@ -19,8 +21,9 @@ namespace eAgenda.WinApp
         public TelaPrincipalForm()
         {
             InitializeComponent();
-            TimerFormulario.Interval = 5; // Define o intervalo do timer
-            TimerFormulario.Tick += new EventHandler(TimerFormulario_Tick); // Adiciona o evento Tick
+            repositorioContato = new RepositorioContato();
+            TimerFormularioMinimiza.Interval = 5; // Define o intervalo do timer
+            TimerFormularioMinimiza.Tick += new EventHandler(TimerFormulario_Tick); // Adiciona o evento Tick
             TimerFormularioFechamento.Interval = 5; // Define o intervalo do timer
             TimerFormularioFechamento.Tick += new EventHandler(TimerFormularioFechamento_Tick); // Adiciona o evento Tick
             TimerCadastro.Interval = 5;
@@ -29,6 +32,27 @@ namespace eAgenda.WinApp
         private void TelaPrincipalForm_Load(object sender, EventArgs e)
         {
 
+        }
+        #endregion
+
+        #region Design
+
+        #region Arredondar bordas
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            GraphicsPath forma = new GraphicsPath();
+            int raio = 20; // Ajuste para o raio desejado
+            forma.AddLine(raio, 0, this.Width - raio, 0);
+            forma.AddArc(this.Width - raio, 0, raio, raio, 270, 90);
+            forma.AddLine(this.Width, raio, this.Width, this.Height - raio);
+            forma.AddArc(this.Width - raio, this.Height - raio, raio, raio, 0, 90);
+            forma.AddLine(this.Width - raio, this.Height, raio, this.Height);
+            forma.AddArc(0, this.Height - raio, raio, raio, 90, 90);
+            forma.AddLine(0, this.Height - raio, 0, raio);
+            forma.AddArc(0, 0, raio, raio, 180, 90);
+            this.Region = new Region(forma);
+            base.OnPaint(e);
         }
         #endregion
 
@@ -46,6 +70,8 @@ namespace eAgenda.WinApp
                 this.Top += e.Y - mouseDownLocation.Y;
             }
         }
+        #endregion
+
         #endregion
 
         #region Botões
@@ -95,7 +121,7 @@ namespace eAgenda.WinApp
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-            TimerFormulario.Start();
+            TimerFormularioMinimiza.Start();
         }
         void TimerFormulario_Tick(object sender, EventArgs e)
         {
@@ -111,7 +137,7 @@ namespace eAgenda.WinApp
                 //Restaura a opacidade para 1
                 this.Opacity = 1;
                 //Para o timer
-                TimerFormulario.Stop();
+                TimerFormularioMinimiza.Stop();
             }
         }
 
@@ -141,22 +167,18 @@ namespace eAgenda.WinApp
         ////////////
         //Cadastro//
         ////////////
-        private void btnMostrarMenuCadastro_Click(object sender, EventArgs e)
-        {
-            estaDescendo = !estaDescendo;
-            TimerCadastro.Start();
-        }
 
         //Contatos
         private void btnContatos_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorContato(repositorioContato);
+
             tlsBarraDeEdicao.Show();
-            controlador = new ControladorContato();
 
             lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
 
-            ConfigurarToolTipsContato(controlador);
-            ConfigurarListagemContato(controlador);
+            ConfigurarToolTips(controlador);
+            ConfigurarListagem(controlador);
         }
 
         //Compromissos
@@ -174,15 +196,9 @@ namespace eAgenda.WinApp
         /////////////
         //Consultas//
         /////////////
-        private void contatosMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
+
         //Compromissos
-        private void compromissosMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
+
 
         #region Animações
         //Cadastro
@@ -207,6 +223,11 @@ namespace eAgenda.WinApp
                 }
             }
         }
+        private void btnMostrarMenuCadastro_Click(object sender, EventArgs e)
+        {
+            estaDescendo = !estaDescendo;
+            TimerCadastro.Start();
+        }
 
         #endregion
 
@@ -225,19 +246,18 @@ namespace eAgenda.WinApp
 
         #endregion
 
-
-        #region Metodos
+        #region Funções
 
         #region Contato
 
         //Info ao passar mouse por cima
-        private void ConfigurarToolTipsContato(ControladorBase controladorSelecionado)
+        private void ConfigurarToolTips(ControladorBase controladorSelecionado)
         {
-            btnExcluir.ToolTipText = controlador.ToolTipAdicionar;
-            btnExcluir.ToolTipText = controlador.ToolTipEditar;
+            btnAdicionar.ToolTipText = controlador.ToolTipAdicionar;
+            btnEditar.ToolTipText = controlador.ToolTipEditar;
             btnExcluir.ToolTipText = controlador.ToolTipExcluir;
         }
-        private void ConfigurarListagemContato(ControladorBase controladorSelecionado)
+        private void ConfigurarListagem(ControladorBase controladorSelecionado)
         {
             UserControl listagemContato = controlador.ObterListagem();
             listagemContato.Dock = DockStyle.Fill;
@@ -269,32 +289,6 @@ namespace eAgenda.WinApp
         #endregion
 
         #endregion
-
-
-
-
-
-
-
-
-        // private string localizacao = " ";
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            // localizacao = rdRemoto.Text;
-        }
-
-        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            // localizacao = radioButton12.Text;
-        }
-
-        private void btnGravar_Click(object sender, EventArgs e)
-        {
-            //Compromisso tarefa = new Compromisso(txtAssunto.Text, dateTimeData.Text, txtInicio.Text, txtTermino.Text, txtContato.Text, localizacao);
-            //txtTeste.Text = tarefa.ToString();
-        }
-
 
     }
 }

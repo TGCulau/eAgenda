@@ -11,19 +11,22 @@ namespace eAgenda.WinApp.ModuloContato
 {
     public class Contato : EntidadeBase
     {
+       // public string ID { get; set; }
         public string Nome { get; set; }
-        public string Telefone { get; set; }
         public string Email { get; set; }
-        public string Empresa { get; set; }
+        public string Telefone { get; set; }
         public string Cargo { get; set; }
+        public string Empresa { get; set; }
+     
 
-        public Contato(string nome, string telefone, string email, string empresa, string cargo)
+        public Contato(string nome, string email, string telefone, string cargo, string empresa)
         {
+            //ID = id;
             Nome = nome;
-            Telefone = telefone;
             Email = email;
-            Empresa = empresa;
+            Telefone = telefone;
             Cargo = cargo;
+            Empresa = empresa;            
         }
 
         public override List<string> Validar()
@@ -52,6 +55,7 @@ namespace eAgenda.WinApp.ModuloContato
         {
             Contato atualizado = (Contato)novoRegistro;
 
+            //ID = atualizado.ID;
             Nome = atualizado.Nome;
             Email = atualizado.Email;
             Telefone = atualizado.Telefone;
@@ -61,7 +65,7 @@ namespace eAgenda.WinApp.ModuloContato
 
         public override string ToString()
         {
-            return $"Id: 0, Nome: {Nome}, Telefone: {Telefone}, Empresa: {Empresa}, Email: {Email}, Cargo: {Cargo}\n";
+            return $"Id: {Id}, Nome: {Nome}, Email: {Email}, Telefone: {Telefone}, Empresa: {Empresa}, Cargo: {Cargo}\n";
         }
     }
 }

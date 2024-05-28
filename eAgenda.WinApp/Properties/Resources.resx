@@ -148,6 +148,9 @@
   <data name="Sair com x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sair com x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cabeçalho Apple modelo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cabeçalho Apple modelo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MenuParaBaixoCinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuParaBaixoCinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,17 +160,20 @@
   <data name="Edicao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edicao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ListaOriginal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ListaOriginal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TelaSucesso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TelaSucesso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sair com x cinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sair com x cinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="+" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ListaOriginal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ListaOriginal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edicao1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edicao1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ListaM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ListaM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OkApertado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OkApertado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MinimizarCom cinzaM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MinimizarCom cinzaM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +193,9 @@
   <data name="Minimizar com cinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Minimizar com cinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CabecalhoCadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CabecalhoCadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MinimizarM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MinimizarM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,19 +211,25 @@
   <data name="BotaoNuloRemaster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotaoNuloRemaster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="+" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TelaErro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TelaErro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SairComXRemaster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SairComXRemaster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lista" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cabeçalho Apple modelo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cabeçalho Apple modelo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Edicao1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edicao1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Minimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ListaM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ListaM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MenuParaBaixoCinza2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuParaBaixoCinza2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
