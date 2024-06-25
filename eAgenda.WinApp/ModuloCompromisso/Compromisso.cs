@@ -9,7 +9,6 @@ namespace eAgenda.WinApp.ModuloCompromisso
 {
     public class Compromisso : EntidadeBase
     {
-       // public string ID { get; set; }
         public string Assunto { get; set; }
         public string Data { get; set; }
         public string Inicio { get; set; }
@@ -67,7 +66,7 @@ namespace eAgenda.WinApp.ModuloCompromisso
 
         public override string ToString()
         {
-            return $"Id: 0, Assunto: {Assunto}, Data: {Data}, Inicio: {Inicio}, Termino: {Termino}, Contato: {Contato}, Localizacao: {Localizacao}\n";
+            return $"Id: {Id}, Assunto: {Assunto}, Data: {Data}, Inicio: {Inicio}, Termino: {Termino}, Contato: {Contato}, Localizacao: {Localizacao}\n";
         }
     }
 }

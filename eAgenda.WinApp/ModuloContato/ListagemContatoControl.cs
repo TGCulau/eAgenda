@@ -1,4 +1,6 @@
-﻿using System;
+﻿using eAgenda.WinApp.Compartilhado;
+using eAgenda.WinApp.ModuloCompromisso;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +13,7 @@ using System.Windows.Forms;
 namespace eAgenda.WinApp.ModuloContato
 {
     public partial class ListagemContatoControl : UserControl
-    {
+    {        
         public ListagemContatoControl()
         {
             InitializeComponent();
@@ -23,6 +25,16 @@ namespace eAgenda.WinApp.ModuloContato
 
             foreach (Contato contato in contatos)
                 listaContatos.Items.Add(contato);
+        }
+
+        public Contato ObterRegistroSelecionado()
+        {
+            if(listaContatos.SelectedItem == null)
+            {
+                return null;
+            }
+
+            return (Contato)listaContatos.SelectedItem;
         }
     }
 }

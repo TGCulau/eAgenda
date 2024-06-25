@@ -17,22 +17,41 @@ namespace eAgenda.WinApp.ModuloContato
     {
         #region Inicializações
         private Contato contato;
-        public Contato Contato { get { return contato; } }
+        public Contato Contato 
+        { 
+            set
+            {
+                txtID.Text = value.Id.ToString();
+                txtNome.PlaceholderText = value.Nome;
+                txtEmail.PlaceholderText = value.Email;
+                txtTelefone.PlaceholderText = value.Telefone;
+                txtCargo.PlaceholderText = value.Cargo;
+                txtEmpresa.PlaceholderText = value.Empresa;
+            }
+            get 
+            { 
+                return contato; 
+            } 
+        }
+
         private Point mouseDownLocation;
         private System.Windows.Forms.Timer TimerFormularioMinimiza = new System.Windows.Forms.Timer();
         private System.Windows.Forms.Timer TimerFormularioFechamento = new System.Windows.Forms.Timer();
         private bool cadastroCompleto;
-        private string backupTextoOriginal;        
+        private string backupTextoOriginal;
         #endregion
 
         #region Construtor
         public TelaContatoForm()
         {
+            TelaPrincipalForm telaIncial = new TelaPrincipalForm();
             InitializeComponent();
             TimerFormularioMinimiza.Interval = 5; // Define o intervalo do timer
             TimerFormularioMinimiza.Tick += new EventHandler(TimerFormulario_Tick); // Adiciona o evento Tick
             TimerFormularioFechamento.Interval = 5; // Define o intervalo do timer
-            TimerFormularioFechamento.Tick += new EventHandler(TimerFormularioFechamento_Tick); // Adiciona o evento Tick
+            TimerFormularioFechamento.Tick += new EventHandler(TimerFormularioFechamento_Tick); // Adiciona o evento Tick            
+            txtID.Text = telaIncial.ObterID();
+
         }
         #endregion
 
@@ -74,8 +93,6 @@ namespace eAgenda.WinApp.ModuloContato
         #endregion
 
         #endregion
-
-        
 
         #region Botões
 
@@ -181,14 +198,9 @@ namespace eAgenda.WinApp.ModuloContato
 
         #endregion
 
-        #region Cancelar
-
-
         #endregion
 
-        #endregion
-
-        #region Metodos
+        #region Funções
 
         public void ChecagemDeCadastro()
         {
@@ -242,6 +254,6 @@ namespace eAgenda.WinApp.ModuloContato
         }
 
         #endregion
-               
+
     }
 }

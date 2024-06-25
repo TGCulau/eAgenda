@@ -8,8 +8,10 @@ namespace eAgenda.WinApp
     public partial class TelaPrincipalForm : Form
     {
         #region Inicializações
+        private int contIDTexto;
         ControladorBase controlador;
         RepositorioContato repositorioContato;
+        RepositorioCompromisso repositorioCompromisso;
         private bool estaDescendo = false;
         private Point mouseDownLocation;
         private System.Windows.Forms.Timer TimerFormularioMinimiza = new System.Windows.Forms.Timer();
@@ -22,6 +24,7 @@ namespace eAgenda.WinApp
         {
             InitializeComponent();
             repositorioContato = new RepositorioContato();
+            repositorioCompromisso = new RepositorioCompromisso();
             TimerFormularioMinimiza.Interval = 5; // Define o intervalo do timer
             TimerFormularioMinimiza.Tick += new EventHandler(TimerFormulario_Tick); // Adiciona o evento Tick
             TimerFormularioFechamento.Interval = 5; // Define o intervalo do timer
@@ -184,8 +187,8 @@ namespace eAgenda.WinApp
         //Compromissos
         private void btnCompromissos_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorCompromisso(repositorioCompromisso);
             tlsBarraDeEdicao.Show();
-            controlador = new ControladorCompromisso();
 
             lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
 
@@ -241,6 +244,11 @@ namespace eAgenda.WinApp
             controlador.Adicionar();
         }
 
+        //Editar
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            controlador.Editar();
+        }
 
         #endregion
 
@@ -288,7 +296,17 @@ namespace eAgenda.WinApp
 
         #endregion
 
-        #endregion
+        #region ObterID
 
+        public string ObterID()
+        {
+            contIDTexto++;
+            string idtexto = Convert.ToString(contIDTexto);
+            return idtexto;
+        }
+
+#endregion
+
+        #endregion
     }
 }

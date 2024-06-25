@@ -39,6 +39,7 @@
             panel1 = new Panel();
             pnlConsultas = new Panel();
             lblCompromisso = new Label();
+            btnMostrarMenuCompromisso = new Button();
             lblCadastros = new Label();
             pictureBox2 = new PictureBox();
             btnCompromissos = new Button();
@@ -50,7 +51,6 @@
             btnSair = new Button();
             panelArrastar = new Panel();
             lblTipoCadastro = new Label();
-            btnMostrarMenuCompromisso = new Button();
             statusStrip1.SuspendLayout();
             tlsBarraDeEdicao.SuspendLayout();
             panel1.SuspendLayout();
@@ -104,6 +104,7 @@
             btnEditar.Padding = new Padding(0, 3, 5, 5);
             btnEditar.Size = new Size(23, 33);
             btnEditar.Text = "toolStripButton2";
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
@@ -171,6 +172,24 @@
             lblCompromisso.TabIndex = 8;
             lblCompromisso.Text = "Consultas";
             // 
+            // btnMostrarMenuCompromisso
+            // 
+            btnMostrarMenuCompromisso.BackColor = Color.Transparent;
+            btnMostrarMenuCompromisso.BackgroundImageLayout = ImageLayout.None;
+            btnMostrarMenuCompromisso.FlatAppearance.BorderColor = Color.FromArgb(226, 227, 227);
+            btnMostrarMenuCompromisso.FlatAppearance.BorderSize = 0;
+            btnMostrarMenuCompromisso.FlatAppearance.MouseDownBackColor = Color.FromArgb(226, 227, 227);
+            btnMostrarMenuCompromisso.FlatAppearance.MouseOverBackColor = Color.FromArgb(226, 227, 227);
+            btnMostrarMenuCompromisso.FlatStyle = FlatStyle.Flat;
+            btnMostrarMenuCompromisso.Image = Properties.Resources.MenuParaBaixoCinza2;
+            btnMostrarMenuCompromisso.ImageAlign = ContentAlignment.MiddleRight;
+            btnMostrarMenuCompromisso.Location = new Point(23, 13);
+            btnMostrarMenuCompromisso.Name = "btnMostrarMenuCompromisso";
+            btnMostrarMenuCompromisso.Size = new Size(276, 23);
+            btnMostrarMenuCompromisso.TabIndex = 9;
+            btnMostrarMenuCompromisso.UseVisualStyleBackColor = false;
+            btnMostrarMenuCompromisso.Click += btnMostrarMenuCadastro_Click;
+            // 
             // lblCadastros
             // 
             lblCadastros.AutoSize = true;
@@ -211,7 +230,6 @@
             btnCompromissos.Text = "        Compromissos";
             btnCompromissos.TextAlign = ContentAlignment.MiddleLeft;
             btnCompromissos.UseVisualStyleBackColor = false;
-            btnCompromissos.Click += btnCompromissos_Click;
             // 
             // pictureBox1
             // 
@@ -319,10 +337,10 @@
             panelArrastar.BackgroundImage = Properties.Resources.CabeçalhoApplePronto;
             panelArrastar.BackgroundImageLayout = ImageLayout.Center;
             panelArrastar.Controls.Add(tlsBarraDeEdicao);
-            panelArrastar.Controls.Add(lblTipoCadastro);
             panelArrastar.Controls.Add(btnMaximizarDesativado);
             panelArrastar.Controls.Add(btnSair);
             panelArrastar.Controls.Add(btnMinimizar);
+            panelArrastar.Controls.Add(lblTipoCadastro);
             panelArrastar.Location = new Point(-2, 0);
             panelArrastar.Name = "panelArrastar";
             panelArrastar.Size = new Size(1272, 79);
@@ -343,33 +361,15 @@
             lblTipoCadastro.Text = "Bem-Vindo(a)";
             lblTipoCadastro.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnMostrarMenuCompromisso
-            // 
-            btnMostrarMenuCompromisso.BackColor = Color.Transparent;
-            btnMostrarMenuCompromisso.BackgroundImageLayout = ImageLayout.None;
-            btnMostrarMenuCompromisso.FlatAppearance.BorderColor = Color.FromArgb(226, 227, 227);
-            btnMostrarMenuCompromisso.FlatAppearance.BorderSize = 0;
-            btnMostrarMenuCompromisso.FlatAppearance.MouseDownBackColor = Color.FromArgb(226, 227, 227);
-            btnMostrarMenuCompromisso.FlatAppearance.MouseOverBackColor = Color.FromArgb(226, 227, 227);
-            btnMostrarMenuCompromisso.FlatStyle = FlatStyle.Flat;
-            btnMostrarMenuCompromisso.Image = Properties.Resources.MenuParaBaixoCinza2;
-            btnMostrarMenuCompromisso.ImageAlign = ContentAlignment.MiddleRight;
-            btnMostrarMenuCompromisso.Location = new Point(23, 13);
-            btnMostrarMenuCompromisso.Name = "btnMostrarMenuCompromisso";
-            btnMostrarMenuCompromisso.Size = new Size(276, 23);
-            btnMostrarMenuCompromisso.TabIndex = 9;
-            btnMostrarMenuCompromisso.UseVisualStyleBackColor = false;
-            btnMostrarMenuCompromisso.Click += btnMostrarMenuCadastro_Click;
-            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1270, 844);
-            Controls.Add(panelArrastar);
             Controls.Add(panel1);
             Controls.Add(pnlRegistros);
+            Controls.Add(panelArrastar);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;

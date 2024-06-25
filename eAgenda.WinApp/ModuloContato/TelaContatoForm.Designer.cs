@@ -62,13 +62,13 @@
             // 
             // txtID
             // 
+            txtID.Enabled = false;
             txtID.Font = new Font("Segoe UI", 11F);
             txtID.Location = new Point(84, 120);
             txtID.Name = "txtID";
             txtID.Size = new Size(100, 27);
             txtID.TabIndex = 0;
             txtID.TabStop = false;
-            txtID.Text = "0";
             // 
             // lblNome
             // 
@@ -88,8 +88,7 @@
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = " Digite seu nome";
             txtNome.Size = new Size(610, 27);
-            txtNome.TabIndex = 0;
-            txtNome.TabStop = false;
+            txtNome.TabIndex = 1;
             // 
             // lblEmail
             // 
@@ -109,8 +108,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = " Ex: funcionario@instituicao.com";
             txtEmail.Size = new Size(610, 27);
-            txtEmail.TabIndex = 0;
-            txtEmail.TabStop = false;
+            txtEmail.TabIndex = 2;
             // 
             // lblTelefone
             // 
@@ -130,8 +128,7 @@
             txtTelefone.Name = "txtTelefone";
             txtTelefone.PlaceholderText = " (DDD) 9 xxxx-xxxx";
             txtTelefone.Size = new Size(610, 27);
-            txtTelefone.TabIndex = 0;
-            txtTelefone.TabStop = false;
+            txtTelefone.TabIndex = 3;
             // 
             // lblCargo
             // 
@@ -151,8 +148,7 @@
             txtCargo.Name = "txtCargo";
             txtCargo.PlaceholderText = " Digite seu cargo";
             txtCargo.Size = new Size(232, 27);
-            txtCargo.TabIndex = 0;
-            txtCargo.TabStop = false;
+            txtCargo.TabIndex = 4;
             // 
             // lblEmpresa
             // 
@@ -172,8 +168,7 @@
             txtEmpresa.Name = "txtEmpresa";
             txtEmpresa.PlaceholderText = " Digite o nome da empresa";
             txtEmpresa.Size = new Size(275, 27);
-            txtEmpresa.TabIndex = 0;
-            txtEmpresa.TabStop = false;
+            txtEmpresa.TabIndex = 5;
             // 
             // panelArrastarCadastro
             // 
@@ -202,7 +197,8 @@
             btnMaximizarDesativado.Location = new Point(63, 2);
             btnMaximizarDesativado.Name = "btnMaximizarDesativado";
             btnMaximizarDesativado.Size = new Size(23, 23);
-            btnMaximizarDesativado.TabIndex = 4;
+            btnMaximizarDesativado.TabIndex = 0;
+            btnMaximizarDesativado.TabStop = false;
             btnMaximizarDesativado.UseVisualStyleBackColor = false;
             // 
             // btnMinimizar
@@ -217,7 +213,8 @@
             btnMinimizar.Location = new Point(33, 2);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.Size = new Size(23, 23);
-            btnMinimizar.TabIndex = 6;
+            btnMinimizar.TabIndex = 7;
+            btnMinimizar.TabStop = false;
             btnMinimizar.UseVisualStyleBackColor = false;
             btnMinimizar.Click += btnMinimizar_Click;
             btnMinimizar.MouseEnter += btnMinimizar_MouseEnter;
@@ -235,7 +232,8 @@
             btnSair.Location = new Point(6, 2);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(23, 23);
-            btnSair.TabIndex = 5;
+            btnSair.TabIndex = 8;
+            btnSair.TabStop = false;
             btnSair.UseVisualStyleBackColor = false;
             btnSair.Click += btnSair_Click;
             btnSair.MouseEnter += btnSair_MouseEnter;
@@ -247,7 +245,7 @@
             btnSalvar.Location = new Point(580, 389);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(114, 48);
-            btnSalvar.TabIndex = 3;
+            btnSalvar.TabIndex = 6;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
@@ -258,7 +256,7 @@
             btnCancelar.Location = new Point(460, 389);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(114, 48);
-            btnCancelar.TabIndex = 3;
+            btnCancelar.TabIndex = 0;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 

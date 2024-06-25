@@ -11,7 +11,6 @@ namespace eAgenda.WinApp.ModuloContato
 {
     public class Contato : EntidadeBase
     {
-       // public string ID { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
@@ -21,7 +20,6 @@ namespace eAgenda.WinApp.ModuloContato
 
         public Contato(string nome, string email, string telefone, string cargo, string empresa)
         {
-            //ID = id;
             Nome = nome;
             Email = email;
             Telefone = telefone;
@@ -55,7 +53,6 @@ namespace eAgenda.WinApp.ModuloContato
         {
             Contato atualizado = (Contato)novoRegistro;
 
-            //ID = atualizado.ID;
             Nome = atualizado.Nome;
             Email = atualizado.Email;
             Telefone = atualizado.Telefone;

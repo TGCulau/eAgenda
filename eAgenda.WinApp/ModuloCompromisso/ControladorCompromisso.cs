@@ -10,6 +10,14 @@ namespace eAgenda.WinApp.ModuloCompromisso
 {
     internal class ControladorCompromisso : ControladorBase
     {
+        private RepositorioCompromisso repositorioCompromisso;
+
+        private ListagemCompromissoControl listagemCompromisso;
+        public ControladorCompromisso(RepositorioCompromisso repositorio)
+        {
+            repositorioCompromisso = repositorio;
+        }
+
         public override string TipoCadastro { get { return "Compromissos"; } }
 
 
@@ -23,6 +31,11 @@ namespace eAgenda.WinApp.ModuloCompromisso
         {
             TelaContatoForm telaContato = new TelaContatoForm();
             telaContato.ShowDialog();
+        }
+
+        public override void Editar()
+        {
+            throw new NotImplementedException();
         }
 
         public override UserControl ObterListagem()
